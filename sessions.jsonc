@@ -1,0 +1,12 @@
+{
+	"projects": [
+		{
+			"name": "Jarvis",
+			"directory": "~/projects/Tools/VirtualJarvis/"
+		},
+		{
+			"name": "projectTracking",
+			"directory": "~/projects/Apps/projectTracking/"
+		}
+	]
+}

@@ -1,5 +1,8 @@
 # AGENTS.md
 
+## Recent Changes
+- ✅ **tmux.sh fixed**: Resolved tilde expansion bug in directory navigation by removing quotes around `$DIR` in cd command (allows `~` expansion like something.sh)
+
 ## Build/Lint/Test Commands
 - **Lint**: `shellcheck *.sh` - Check shell script syntax and style
 - **Syntax check**: `bash -n *.sh` - Validate bash syntax without execution
@@ -18,7 +21,7 @@
 - Use `jq` for JSON parsing with `-r` flag for raw output
 - Use `rofi -dmenu` for interactive selection
 - Launch tmux sessions with proper attach/new logic
-- Use `cd "$DIR" || exit 1` for directory changes with error handling
+- Use `cd $DIR || exit 1` for directory changes with error handling (allows tilde expansion)
 
 ### Error Handling
 - Check command success with `|| exit 1`
