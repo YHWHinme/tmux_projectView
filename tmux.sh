@@ -15,23 +15,23 @@ exec kitty bash -c "
   DIR=\$(echo \"\$PROJECT_INFO\" | jq -r '.directory')
   TABS=\$(echo \"\$PROJECT_INFO\" | jq -r '.tabs // []')
 
-  echo \"PROJECTS=\$PROJECTS\"
-  echo \"PROJECT_INFO=\$PROJECT_INFO\"
-  echo \"DIR=\$DIR\"
-
   cd \"\$DIR\" || exit 1
   if tmux has-session -t \"$PROJECTS\" 2>/dev/null; then
     exec tmux attach-session -t \"$PROJECTS\"
   else
     # Create session with first tab
-    FIRST_TAB=\$(echo \"\$TABS\" | jq -r '.[0].name // \"main\"')
+    FIRST_TAB=\$(echo \"\$TABS\" | jq -r '.[0].name // "main"')
+    FIRST_COMMAND=\$(echo \"\$TABS\" | jq -r '.[0].command // ""')
     tmux new-session -d -s \"$PROJECTS\" -n \"\$FIRST_TAB\"
+    if [ -n \"\$FIRST_COMMAND\" ]; then tmux send-keys -t \"$PROJECTS:0\" \"\$FIRST_COMMAND\" C-m ; fi
 
     # Create additional tabs
     TAB_COUNT=\$(echo \"\$TABS\" | jq -r 'length')
-    for ((i=1; i<TAB_COUNT; i++)); do
+    for ((i=1; i<\$TAB_COUNT; i++)); do
       TAB_NAME=\$(echo \"\$TABS\" | jq -r \".[\$i].name\")
+      TAB_COMMAND=\$(echo \"\$TABS\" | jq -r \".[\$i].command // \\\"\\\"\")
       tmux new-window -t \"$PROJECTS\" -n \"\$TAB_NAME\"
+      if [ -n \"\$TAB_COMMAND\" ]; then tmux send-keys -t \"$PROJECTS:\$i\" \"\$TAB_COMMAND\" C-m ; fi
     done
 
     # Select first window and attach

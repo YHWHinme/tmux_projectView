@@ -5,10 +5,12 @@
 			"directory": "/home/oj2/projects/Tools/VirtualJarvis/",
 			"tabs": [
 				{
-					"name": "nvim"
+					"name": "nvim",
+					"command": "nvim ."
 				},
 				{
-					"name": "opencode"
+					"name": "opencode",
+					"command": "opencode"
 				}
 			]
 		},
@@ -17,10 +19,26 @@
 			"directory": "/home/oj2/projects/Apps/projectTracking/",
 			"tabs": [
 				{
-					"name": "something"
+					"name": "code",
+					"command": "ls"
 				},
 				{
-					"name": "trials"
+					"name": "trials",
+					"command": "opencode"
+				}
+			]
+		},
+		{
+			"name": "FormulaMapper",
+			"directory": "/home/oj2/projects/Apps/FormMapper/",
+			"tabs": [
+				{
+					"name": "code",
+					"command": "ls"
+				},
+				{
+					"name": "AI",
+					"command": "opencode"
 				}
 			]
 		}
