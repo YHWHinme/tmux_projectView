@@ -2,11 +2,27 @@
 	"projects": [
 		{
 			"name": "Jarvis",
-			"directory": "~/projects/Tools/VirtualJarvis/"
+			"directory": "~/projects/Tools/VirtualJarvis/",
+			"tabs": [
+				{
+					"name": "nvim"
+				},
+				{
+					"name": "opencode"
+				}
+			]
 		},
 		{
 			"name": "projectTracking",
-			"directory": "~/projects/Apps/projectTracking/"
+			"directory": "~/projects/Apps/projectTracking/",
+			"tabs": [
+				{
+					"name": "main"
+				},
+				{
+					"name": "logs"
+				}
+			]
 		}
 	]
 }

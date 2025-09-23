@@ -2,6 +2,8 @@
 
 ## Recent Changes
 - ✅ **tmux.sh fixed**: Resolved tilde expansion bug in directory navigation by removing quotes around `$DIR` in cd command (allows `~` expansion like something.sh)
+- ✅ **Multi-window sessions**: Added pre-defined tabs/windows to tmux sessions (Jarvis: nvim, opencode; projectTracking: main, logs)
+- ✅ **Variable expansion fix**: Moved JSON parsing inside bash -c to prevent multiline JSON from breaking command execution
 
 ## Build/Lint/Test Commands
 - **Lint**: `shellcheck *.sh` - Check shell script syntax and style
@@ -22,6 +24,9 @@
 - Use `rofi -dmenu` for interactive selection
 - Launch tmux sessions with proper attach/new logic
 - Use `cd $DIR || exit 1` for directory changes with error handling (allows tilde expansion)
+- Create multi-window tmux sessions with `tmux new-session -d -s "name" -n "window"` and `tmux new-window -t "session" -n "window"`
+- Use `jq '.tabs // []'` for optional tab configurations with fallback to default window
+- Parse JSON inside `exec bash -c` commands to avoid variable expansion issues with multiline content
 
 ### Error Handling
 - Check command success with `|| exit 1`
