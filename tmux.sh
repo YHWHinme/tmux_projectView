@@ -15,7 +15,6 @@ exec kitty bash -c "
   DIR=\$(echo \"\$PROJECT_INFO\" | jq -r '.directory')
   TABS=\$(echo \"\$PROJECT_INFO\" | jq -r '.tabs // []')
 
-  DIR=${DIR/#\~/$HOME}
   cd "$DIR" || exit 1
   if tmux has-session -t \"$PROJECTS\" 2>/dev/null; then
     exec tmux attach-session -t \"$PROJECTS\"

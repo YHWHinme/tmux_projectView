@@ -2,7 +2,7 @@
 	"projects": [
 		{
 			"name": "Jarvis",
-			"directory": "~/projects/Tools/VirtualJarvis/",
+			"directory": "/home/oj2/projects/Tools/VirtualJarvis/",
 			"tabs": [
 				{
 					"name": "nvim"
@@ -14,13 +14,13 @@
 		},
 		{
 			"name": "projectTracking",
-			"directory": "~/projects/Apps/projectTracking/",
+			"directory": "/home/oj2/projects/Apps/projectTracking/",
 			"tabs": [
 				{
-					"name": "main"
+					"name": "something"
 				},
 				{
-					"name": "logs"
+					"name": "trials"
 				}
 			]
 		}
