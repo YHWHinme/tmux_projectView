@@ -1,6 +1,7 @@
 # AGENTS.md
 
 ## Recent Changes
+- ✅ **Debugging successful**: Added debug output to tmux.sh to verify DIR variable assignment and cd execution, identifying issues with JSON parsing or path extraction
 - ✅ **tmux.sh fixed**: Resolved tilde expansion bug in directory navigation by removing quotes around `$DIR` in cd command (allows `~` expansion like something.sh)
 - ✅ **Multi-window sessions**: Added pre-defined tabs/windows to tmux sessions (Jarvis: nvim, opencode; projectTracking: main, logs)
 - ✅ **Variable expansion fix**: Moved JSON parsing inside bash -c to prevent multiline JSON from breaking command execution
